@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Vision Image Labeler</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="panel">
+    <h1>Image Label Detector</h1>
+    <p class="subheading">Upload an image and Google Cloud Vision will do the rest!</p>
+
+    <% if (error) { %>
+      <p class="error" role="alert"><%= error %></p>
+    <% } %>
+
+    <form action="/analyze" method="POST" enctype="multipart/form-data">
+      <input id="image" name="image" type="file" aria-label="Choose an image" accept="image/jpeg,image/png" required>
+      <button type="submit">Detect Labels</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detected Labels — Cloud Vision</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="panel">
+    <p class="eyebrow">GOOGLE CLOUD VISION</p>
+    <h1>Detected Labels</h1>
+    <p class="subheading">Results returned from the Cloud Vision Label Detection service.</p>
+
+    <% if (labels.length === 0) { %>
+      <p>No labels were detected for this image.</p>
+    <% } else { %>
+      <ol class="labels">
+        <% labels.forEach(label => { %>
+          <li>
+            <div class="label-line">
+              <strong><%= label.name %></strong>
+              <span><%= label.confidence.toFixed(1) %>%</span>
+            </div>
+            <div class="track"><div class="bar" style="width: <%= label.confidence %>%"></div></div>
+          </li>
+        <% }) %>
+      </ol>
+    <% } %>
+
+    <a class="back" href="/">Analyze another image</a>
+  </main>
+</body>
+</html>
