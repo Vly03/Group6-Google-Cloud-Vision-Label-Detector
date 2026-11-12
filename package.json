@@ -1,0 +1,18 @@
+{
+  "name": "vision-labels-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Express image upload and Google Cloud Vision labeling - Web Systems SaaS lab",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@google-cloud/vision": "^6.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "multer": "^2.5.0"
+  }
+}
